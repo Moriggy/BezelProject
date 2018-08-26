@@ -138,7 +138,7 @@ function download_bezel() {
                 theme="${theme[1]}"
 #                if [[ "${status[choice]}" == "i" ]]; then
                 if [[ -d "/opt/masos/configs/all/retroarch/overlay/GameBezels/$theme" ]]; then
-                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    options=(1 "Actualizar $theme" 2 "Desinstalar $theme")
                     cmd=(dialog --backtitle "$__backtitle" --menu "Elija una opcion de pack de bezel" 12 40 06)
                     local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
                     case "$choice" in
