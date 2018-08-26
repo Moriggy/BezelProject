@@ -83,7 +83,6 @@ function uninstall_bezel_pack() {
 
 function download_bezel() {
     local themes=(
-		'DOCK-PI3 MasOS-overlays-project'
         'thebezelproject MAME'
         'thebezelproject Atari5200'
         'thebezelproject Atari7800'
