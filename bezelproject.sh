@@ -112,11 +112,11 @@ function download_bezel() {
             theme="${theme[1]}"
             if [[ -d "/opt/masos/configs/all/retroarch/overlay/GameBezels/$theme" ]]; then
                 status+=("i")
-                options+=("$i" "Update or Uninstall $theme (installed)")
+                options+=("$i" "Actualizar o Desinstalar $theme (instalado)")
                 installed_bezelpacks+=("$theme $repo")
             else
                 status+=("n")
-                options+=("$i" "Install $theme (not installed)")
+                options+=("$i" "Instalar $theme (no instalado)")
             fi
             ((i++))
         done
