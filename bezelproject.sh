@@ -15,7 +15,7 @@ function main_menu() {
     local choice
 
     while true; do
-        choice=$(dialog --backtitle "$BACKTITLE" --title " MENU PRINCIPAL" \
+        choice=$(dialog --backtitle "$BACKTITLE" --title " MENU PRINCIPAL " \
             --ok-label OK --cancel-label Exit \
             --menu "Elija una opcion" 25 75 20 \
             1 "Descargar pack bezel de sistema (automaticamente habilita los bezels)" \
@@ -103,7 +103,7 @@ function download_bezel() {
         local status=()
         local default
 
-        options+=(U "Update install script - script will exit when updated")
+        options+=(U "Actualizar el script - el script se cerrara despues de actualizarse")
 
         local i=1
         for theme in "${themes[@]}"; do
@@ -139,7 +139,7 @@ function download_bezel() {
 #                if [[ "${status[choice]}" == "i" ]]; then
                 if [[ -d "/opt/masos/configs/all/retroarch/overlay/GameBezels/$theme" ]]; then
                     options=(1 "Update $theme" 2 "Uninstall $theme")
-                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for the bezel pack" 12 40 06)
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Elija una opcion de pack de bezel" 12 40 06)
                     local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
                     case "$choice" in
                         1)
@@ -162,9 +162,9 @@ function disable_bezel() {
 
 clear
     while true; do
-        choice=$(dialog --backtitle "$BACKTITLE" --title " MAIN MENU " \
+        choice=$(dialog --backtitle "$BACKTITLE" --title " MENU PRINCIPAL " \
             --ok-label OK --cancel-label Exit \
-            --menu "Which system would you like to disable bezels for?" 25 75 20 \
+            --menu "Que sistema quieres deshabilitar los bezels?" 25 75 20 \
             1 "GCEVectrex" \
             2 "SuperGrafx" \
             3 "Sega32X" \
@@ -204,9 +204,9 @@ function enable_bezel() {
 
 clear
     while true; do
-        choice=$(dialog --backtitle "$BACKTITLE" --title " MAIN MENU " \
+        choice=$(dialog --backtitle "$BACKTITLE" --title " MENU PRINCIPAL " \
             --ok-label OK --cancel-label Exit \
-            --menu "Which system would you like to enable bezels for?" 25 75 20 \
+            --menu "Que sistema quieres habilitar los bezels?" 25 75 20 \
             1 "GCEVectrex" \
             2 "SuperGrafx" \
             3 "Sega32X" \
@@ -243,7 +243,7 @@ clear
 }
 
 function hide_bezel() {
-dialog --infobox "...processing..." 3 20 ; sleep 2
+dialog --infobox "...procesando..." 3 20 ; sleep 2
 emulator=$1
 file="/opt/masos/configs/${emulator}/retroarch.cfg"
 
@@ -279,7 +279,7 @@ esac
 }
 
 function show_bezel() {
-dialog --infobox "...processing..." 3 20 ; sleep 2
+dialog --infobox "...procesando..." 3 20 ; sleep 2
 emulator=$1
 file="/opt/masos/configs/${emulator}/retroarch.cfg"
 
