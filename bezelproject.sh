@@ -2,7 +2,7 @@
 rp_module_id="bezelproject"
 rp_module_desc="BezelPrject en MasOS"
 rp_module_section=""
-#IFS=';'
+
 
 # Welcome
  dialog --backtitle "The Bezel Project" --title "The Bezel Project - Bezel Pack Utility" \
@@ -22,7 +22,7 @@ function main_menu() {
             2 "Habilitar pack bezel de sistema" \
             3 "Deshabilitar pack bezel de sistema" \
             4 "Informacion:  Retroarch cores setup de bezels por sistema" \
-            2>&1 > /dev/tty)
+			2>&1 > /dev/tty)
 
         case "$choice" in
             1) download_bezel  ;;
